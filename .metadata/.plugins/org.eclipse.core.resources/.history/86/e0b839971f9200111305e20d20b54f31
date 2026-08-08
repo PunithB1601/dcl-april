@@ -1,0 +1,13 @@
+package com.dcl.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class AppExceptionHandler {
+
+	public ResponseEntity<?> handleAppException(AppException exception){
+		return new ResponseEntity<>(exception.getMessage(), exception.getHttpStatus();
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Passenger.java&apos; to &apos;MMT_API/src/main/java/com.mmt.entity&apos;&#x0D;&#x0A;- Original project: &apos;MMT_API&apos;&#x0D;&#x0A;- Destination element: &apos;MMT_API/src/main/java/com.mmt.entity&apos;&#x0D;&#x0A;- Original element: &apos;com.mmt.Passenger.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.mmt.entity" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.mmt{Passenger.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1783407378102" units="1" version="1.0"/>
+</session>

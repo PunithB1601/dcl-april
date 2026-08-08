@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=01_EngineApp_IOC/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl{Engine.java[Engine" modifiers="513" timestamp="1781932601641"/>
+    <typeInfo handle="=02_PUBG_IOC/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.pubg{Weapon.java[Weapon" modifiers="513" timestamp="1782190239720"/>
+    <typeInfo handle="=03_Engine_App_Annotation/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl{Engine.java[Engine" modifiers="513" timestamp="1782278605060"/>
+    <typeInfo handle="=04_Payment_App_Annotation/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl{Payment.java[Payment" modifiers="513" timestamp="1782370196106"/>
+    <typeInfo handle="=06_SpringBootDemo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl.beans{Engine.java[Engine" modifiers="513" timestamp="1782883613175"/>
+    <typeInfo handle="=09_EComm_App/C:\/Users\/DELL\/.m2\/repository\/org\/springframework\/boot\/spring-boot\/4.1.0\/spring-boot-4.1.0.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.boot=/=/maven.artifactId=/spring-boot=/=/maven.version=/4.1.0=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.boot(CommandLineRunner.class[CommandLineRunner" modifiers="1537" timestamp="1782795417494"/>
+    <typeInfo handle="=09_EComm_App/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl.service{ProductService.java[ProductService" modifiers="513" timestamp="1784005431154"/>
+    <typeInfo handle="=09_EComm_App/C:\/Users\/DELL\/.m2\/repository\/org\/yaml\/snakeyaml\/2.6\/snakeyaml-2.6.jar=/maven.pomderived=/true=/=/maven.groupId=/org.yaml=/=/maven.artifactId=/snakeyaml=/=/maven.version=/2.6=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.yaml.snakeyaml.parser(Production.class[Production" modifiers="1536" timestamp="1782795416240"/>
+    <typeInfo handle="=11_SpringWebMVCDemo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl.service{UserService.java[UserService" modifiers="513" timestamp="1784956280479"/>
+    <typeInfo handle="=13_SpringRest/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl.service{ProductService.java[ProductService" modifiers="513" timestamp="1785820192839"/>
+    <typeInfo handle="=13_SpringRest/C:\/Users\/DELL\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/4.1.0\/spring-data-jpa-4.1.0.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/4.1.0=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1782969308207"/>
+    <typeInfo handle="=14_SpringRest/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dcl.service{OrderService.java[OrderService" modifiers="513" timestamp="1785907991806"/>
+</typeInfoHistroy>

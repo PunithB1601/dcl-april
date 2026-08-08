@@ -1,0 +1,28 @@
+package com.dcl.service;
+
+import java.util.List;
+
+import com.dcl.dto.ProductDto;
+import com.dcl.request.AddProduct;
+
+public class ProductServiceImpl implements ProductService {
+
+	@Override
+	public ProductDto addProduct(AddProduct request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductDto getProductById(Integer productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ProductDto> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

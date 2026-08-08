@@ -1,0 +1,8 @@
+package com.dcl.dto;
+
+public class OrderDto {
+
+	private Integer orderId;
+	
+	private Integer productName;
+}

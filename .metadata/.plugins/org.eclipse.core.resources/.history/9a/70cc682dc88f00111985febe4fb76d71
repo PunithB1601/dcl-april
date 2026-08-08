@@ -1,0 +1,8 @@
+package com.dcl.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+}

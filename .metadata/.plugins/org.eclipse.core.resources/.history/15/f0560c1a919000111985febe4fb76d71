@@ -1,0 +1,15 @@
+package com.dcl.feignservice;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.dcl.dto.ProductDto;
+
+@FeignClient(name="PRODUCT_SERVICE",url="http://localhost:8085")
+public interface ProductFeignClientService {
+
+	@GetMapping("/product/get")
+	public List<ProductDto> getAllProduct();
+}

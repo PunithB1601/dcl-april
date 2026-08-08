@@ -1,0 +1,10 @@
+package com.dcl.service;
+
+import java.util.List;
+
+import com.dcl.dto.ProductDto;
+
+public interface OrderService {
+
+	List<ProductDto> getAllProducts();
+}

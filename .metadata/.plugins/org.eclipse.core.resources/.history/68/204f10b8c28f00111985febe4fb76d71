@@ -1,0 +1,17 @@
+package com.dcl.service;
+
+import java.util.List;
+
+import com.dcl.dto.ProductDto;
+import com.dcl.request.AddProduct;
+
+public interface ProductService {
+
+	ProductDto addProduct(AddProduct request);
+	
+	ProductDto getProductById(Integer productId);
+	
+	List<ProductDto> getAllProducts();
+	
+	void deleteProductById(Integer productId);
+}

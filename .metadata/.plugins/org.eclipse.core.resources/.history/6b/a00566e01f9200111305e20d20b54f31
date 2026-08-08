@@ -1,0 +1,68 @@
+package com.dcl.service.impl;
+
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dcl.dto.ProductDto;
+import com.dcl.entity.Product;
+import com.dcl.repo.ProductRepository;
+import com.dcl.request.AddProduct;
+import com.dcl.request.UpdateRequest;
+import com.dcl.service.ProductService;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	private ProductRepository prepo;
+	
+	@Autowired
+	private ModelMapper mapper;
+	
+	@Override
+	public ProductDto addProduct(AddProduct request) {
+		Product p=mapper.map(request, Product.class);
+		p=prepo.save(p);
+		ProductDto dto=mapper.map(p, ProductDto.class);
+		return dto;
+	}
+
+	@Override
+	public ProductDto getProductById(Integer productId) {
+		Product p=prepo.findById(productId).orElse(null);
+		if(p==null) {
+			throw new RuntimeException("Product not found!");
+		}
+		return mapper.map(p, ProductDto.class);
+	}
+
+	@Override
+	public List<ProductDto> getAllProducts() {
+		List<Product> productList=prepo.findAll();
+		
+		List<ProductDto> pdtoList=productList.stream()
+				   .map((p)->mapper.map(p, ProductDto.class))
+				   .collect(Collectors.toList());    
+		return pdtoList;
+	}
+
+	@Override
+	public void deleteProductById(Integer productId) {
+		Product p=prepo.findById(productId).orElseThrow(()->new RuntimeException("Product not found!"));
+		prepo.deleteById(productId);
+	}
+
+	@Override
+	public ProductDto updateProduct(Integer productId, UpdateRequest request) {
+		Product existingProduct=prepo.findById(productId).orElseThrow(()->new RuntimeException("Product not found!"));
+		mapper.map(request, existingProduct);
+		Product afterUpdate=prepo.save(existingProduct);
+		return mapper.map(afterUpdate, ProductDto.class);
+	}
+
+}

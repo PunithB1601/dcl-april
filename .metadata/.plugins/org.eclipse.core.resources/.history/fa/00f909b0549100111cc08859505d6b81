@@ -1,0 +1,5 @@
+package com.dcl.config;
+
+public class AppConfig {
+
+}
