@@ -1,0 +1,12 @@
+package com.dcl.cresponse;
+
+import org.springframework.http.HttpStatus;
+
+public class ApiResponse<T> {
+
+	private String message;
+	
+	private T data;
+	
+	private HttpStatus httpStatus;
+}

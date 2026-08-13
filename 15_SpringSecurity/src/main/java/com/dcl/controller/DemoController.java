@@ -1,32 +1,32 @@
 package com.dcl.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dcl.cresponse.ApiResponse;
+import com.dcl.dto.UserDto;
+import com.dcl.request.RegisterRequest;
+import com.dcl.service.UserService;
+
 @RestController
+@RequestMapping("/user")
 public class DemoController {
 
-	@GetMapping("/login1")
-	public String login() {
-		return "login-page";
-	}
+	@Autowired
+	private UserService uservice;
 	
-	@GetMapping("/dashboard")
-	public String dashboard() {
-		return "dash-board";
+	@PostMapping("/register")
+	public ResponseEntity<?> register(@RequestBody RegisterRequest request){
+		UserDto dto=uservice.register(request);
+		return ResponseEntity.ok(new ApiResponse<>("User registration successful",dto,HttpStatus.OK));
 	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		return "logout-page";
-	}
-	
-	@GetMapping("/contact")
-	public String contactUs() {
-		return "contact-us";
-	}
-	
 	
 }

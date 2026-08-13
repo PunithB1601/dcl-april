@@ -1,0 +1,14 @@
+package com.dcl.dto;
+
+import java.time.LocalDate;
+
+public class UserDto {
+
+	private Integer userId;
+	
+	private String username;
+	
+	private String email;
+	
+	private LocalDate createdAt;
+}

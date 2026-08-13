@@ -1,0 +1,5 @@
+package com.dcl.entity;
+
+public class User {
+
+}
