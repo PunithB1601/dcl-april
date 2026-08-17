@@ -1,8 +1,13 @@
 package com.dcl.service;
 
+import java.util.Collections;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +18,14 @@ import com.dcl.repo.UserRepo;
 import com.dcl.request.RegisterRequest;
 
 @Service
-public class UserService {
+public class UserService{
 
-	@Autowired
-	private ModelMapper mapper;
+	
+	private final ModelMapper mapper;
+	
+	public UserService(ModelMapper mapper) {
+		this.mapper=mapper;
+	}
 	
 	@Autowired
 	private UserRepo urepo;
@@ -25,6 +34,7 @@ public class UserService {
 	private PasswordEncoder encoder;
 	
 	public UserDto register(RegisterRequest request) {
+		//validating user is already exisiting user or not
 		User alreadyExists=urepo.findByEmail(request.getEmail()).orElse(null);
 		if(alreadyExists!=null) {
 			throw new AppException("User Already exists!", HttpStatus.CONFLICT);
@@ -35,4 +45,6 @@ public class UserService {
 		
 		return mapper.map(newUser, UserDto.class);
 	}
+
+	
 }

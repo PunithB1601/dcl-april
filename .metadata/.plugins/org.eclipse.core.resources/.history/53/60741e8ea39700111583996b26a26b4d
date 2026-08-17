@@ -1,0 +1,50 @@
+package com.dcl.service;
+
+import java.util.Collections;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.dcl.dto.UserDto;
+import com.dcl.entity.User;
+import com.dcl.exception.AppException;
+import com.dcl.repo.UserRepo;
+import com.dcl.request.RegisterRequest;
+
+@Service
+public class UserService implements UserDetailsService{
+
+	@Autowired
+	private ModelMapper mapper;
+	
+	@Autowired
+	private UserRepo urepo;
+	
+	@Autowired
+	private PasswordEncoder encoder;
+	
+	public UserDto register(RegisterRequest request) {
+		//validating user is already exisiting user or not
+		User alreadyExists=urepo.findByEmail(request.getEmail()).orElse(null);
+		if(alreadyExists!=null) {
+			throw new AppException("User Already exists!", HttpStatus.CONFLICT);
+		}
+		User newUser=mapper.map(request, User.class);
+		newUser.setPassword(encoder.encode(newUser.getPassword()));
+		newUser=urepo.save(newUser);
+		
+		return mapper.map(newUser, UserDto.class);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		User u=urepo.findByEmail(email).orElseThrow(()->new AppException("User Not Found!",HttpStatus.NOT_FOUND));
+		return new org.springframework.security.core.userdetails.User(u.getEmail(), u.getPassword(), Collections.EMPTY_LIST);
+	}
+}
