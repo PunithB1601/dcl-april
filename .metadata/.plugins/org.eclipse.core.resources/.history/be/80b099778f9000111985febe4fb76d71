@@ -1,7 +1,0 @@
-package com.dcl.feignservice;
-
-
-public interface ProductFeignClientService {
-
-	public List<ProductDto> getAllProduct();
-}

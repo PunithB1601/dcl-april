@@ -1,4 +1,0 @@
-spring.application.name=15_SpringSecurity
-
-spring.security.user.name=root
-spring.security.user.password=tiger

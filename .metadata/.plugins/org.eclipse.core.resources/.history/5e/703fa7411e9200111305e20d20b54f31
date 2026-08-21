@@ -1,9 +1,0 @@
-package com.dcl.exception;
-
-import org.springframework.http.HttpStatus;
-
-public class AppException {
-
-	private HttpStatus httpStatus;
-	
-}

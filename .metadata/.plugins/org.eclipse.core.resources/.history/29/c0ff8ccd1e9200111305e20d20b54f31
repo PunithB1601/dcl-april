@@ -1,5 +1,0 @@
-package com.dcl.exception;
-
-public class AppExceptionHandler {
-
-}

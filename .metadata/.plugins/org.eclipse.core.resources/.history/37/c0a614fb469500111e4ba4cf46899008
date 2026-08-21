@@ -1,5 +1,0 @@
-package com.dcl.service;
-
-public class AppException {
-
-}
