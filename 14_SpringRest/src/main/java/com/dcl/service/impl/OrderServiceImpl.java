@@ -1,6 +1,7 @@
 package com.dcl.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import com.dcl.entity.Orders;
 import com.dcl.feignservice.ProductFeignClientService;
 import com.dcl.repo.OrderRepository;
 import com.dcl.request.OrderProductRequest;
+import com.dcl.response.ApiResponse;
 import com.dcl.service.OrderService;
 
 @Service
@@ -29,7 +31,9 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Override
 	public List<ProductDto> getAllProducts() {
-		List<ProductDto> productList=feignClient.getAllProduct();
+		
+		ApiResponse response=feignClient.getAllProduct();
+		List<ProductDto> productList=(List<ProductDto>)response.getData();
 		return productList;
 	}
 
@@ -38,7 +42,9 @@ public class OrderServiceImpl implements OrderService {
 		Orders order=new Orders();
 		order.setProductId(request.getProductId());
 		order.setQuantity(request.getQuantity());
-		ProductDto pdto=feignClient.getProductById(request.getProductId());
+		ApiResponse response=feignClient.getProductById(request.getProductId());
+		Map<String, Object> pdtoMap=(Map<String, Object>)response.getData();
+		ProductDto pdto=mapper.map(pdtoMap, ProductDto.class);
 		Double totalPrice=request.getQuantity()*pdto.getPrice();
 		order.setTotalPrice(totalPrice);
 		order=orepo.save(order);

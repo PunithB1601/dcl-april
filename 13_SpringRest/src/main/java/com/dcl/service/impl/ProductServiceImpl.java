@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductDto getProductById(Integer productId) {
 		Product p=prepo.findById(productId).orElse(null);
-		int i=10/0;
+		
 		if(p==null) {
 			throw new AppException("Product Not Found!", HttpStatus.NOT_FOUND);
 		}

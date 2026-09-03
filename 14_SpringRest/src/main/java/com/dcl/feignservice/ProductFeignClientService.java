@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.dcl.dto.ProductDto;
+import com.dcl.response.ApiResponse;
 
-@FeignClient(name="product-api",url="http://localhost:8085/product")
+
+
+@FeignClient(name="PRODUCT-SERVICE",path="/product")
 public interface ProductFeignClientService {
 
 	@GetMapping("/get")
-	public List<ProductDto> getAllProduct();
+	public ApiResponse<?> getAllProduct();
 	
 	@GetMapping("/get/{productId}")
-	public ProductDto getProductById(@PathVariable Integer productId);
+	public ApiResponse<?> getProductById(@PathVariable Integer productId);
 }

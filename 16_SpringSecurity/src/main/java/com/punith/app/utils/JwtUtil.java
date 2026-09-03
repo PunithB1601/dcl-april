@@ -2,6 +2,7 @@ package com.punith.app.utils;
 
 
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Map;
 
@@ -29,7 +30,8 @@ public class JwtUtil {
                 .setClaims(claims)//role
                 .setSubject(email)//email
                 .setIssuedAt(new Date())//date
-                .signWith(SECRET_KEY,SignatureAlgorithm.HS256 )//(it sign the token )data and key-->algorithm
+                
+                .signWith(SECRET_KEY,SignatureAlgorithm.HS256)//(it sign the token )data and key-->algorithm
                 .compact(); // return jwt token
     }
 

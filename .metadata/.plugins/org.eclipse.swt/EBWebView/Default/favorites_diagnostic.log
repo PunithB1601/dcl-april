@@ -417,3 +417,43 @@
 2026-08-20 05:04:44.686: [INFO] BookmarkModelLoaded, ids_reassigned: 0
 2026-08-20 05:04:44.686: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-08-20 05:04:44.686: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-22 05:03:44.535: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-22 05:14:32.075: [INFO] CurrentProfilePath: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-22 05:14:32.075: [INFO] Profiles total count: 1
+2026-08-22 05:14:32.076: [INFO] Profile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T05:04:12.156Z
+2026-08-22 05:14:32.076: [INFO] LastUsedProfileDir: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-22 05:14:32.076: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T05:04:12.156Z
+2026-08-22 05:14:32.076: [INFO] OnDoneLoading sync enabled: 0
+2026-08-22 05:14:32.076: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-22 05:14:32.076: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-22 05:14:32.076: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-22 07:07:41.118: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-24 05:05:25.596: [INFO] CurrentProfilePath: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-24 05:05:25.596: [INFO] Profiles total count: 1
+2026-08-24 05:05:25.597: [INFO] Profile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T05:04:12.156Z
+2026-08-24 05:05:25.597: [INFO] LastUsedProfileDir: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-24 05:05:25.597: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T05:04:12.156Z
+2026-08-24 05:05:25.597: [INFO] OnDoneLoading sync enabled: 0
+2026-08-24 05:05:25.597: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-24 05:05:25.597: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-24 05:05:25.597: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-25 06:23:52.664: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-31 07:14:48.386: [INFO] CurrentProfilePath: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 07:14:48.386: [INFO] Profiles total count: 1
+2026-08-31 07:14:48.387: [INFO] Profile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-24T06:01:53.619Z
+2026-08-31 07:14:48.387: [INFO] LastUsedProfileDir: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 07:14:48.387: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-24T06:01:53.619Z
+2026-08-31 07:14:48.387: [INFO] OnDoneLoading sync enabled: 0
+2026-08-31 07:14:48.387: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-31 07:14:48.387: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-31 07:14:48.387: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-31 08:17:52.576: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 06:43:50.499: [INFO] CurrentProfilePath: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-09-01 06:43:50.499: [INFO] Profiles total count: 1
+2026-09-01 06:43:50.499: [INFO] Profile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-24T06:01:53.619Z
+2026-09-01 06:43:50.499: [INFO] LastUsedProfileDir: C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-09-01 06:43:50.499: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-24T06:01:53.619Z
+2026-09-01 06:43:50.499: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 06:43:50.500: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 06:43:50.500: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 06:43:50.500: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

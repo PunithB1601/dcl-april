@@ -53,6 +53,7 @@ public class AuthController {
         	throw new UserException("Invalid Password", HttpStatus.BAD_REQUEST);
         }
         
+        
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", user.getRole());
         

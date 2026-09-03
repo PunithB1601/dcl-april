@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -56,7 +57,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             try {
             	//take the user email from token
                 email = jwtUtil.extractSubject(jwt);
-                System.out.println("email extracted:"+jwt);
+                System.out.println("email extracted:"+email);
             } catch (Exception e) {
                 // Invalid token, continue without authentication
                 chain.doFilter(request, response);
@@ -71,7 +72,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 System.out.println("Getting data from database:"+userDetails.getUsername());
                 Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
                 System.out.println("Authorities:"+authorities);
-                var authToken = new org.springframework.security.authentication.UsernamePasswordAuthenticationToken(
+                var authToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, authorities);
                 System.out.println(authToken);
                 System.out.println("Authorities:"+authorities);

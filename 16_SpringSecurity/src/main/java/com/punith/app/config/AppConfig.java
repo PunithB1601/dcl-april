@@ -124,6 +124,21 @@ public class AppConfig {
     
     @Bean
     public OpenAPI customOpenAPI() {
+    	
+    	//OpenApi api=new OpenApi();
+    	//Info info=new Info();
+    	//api.info(info.title("Spring Security Demo").version(1.0).description("Demo description"));
+    	//SecurityRequirement sr=new SecurityRequirement();
+    	//sr.addList("Bearer Authentication"));
+    	//api.addSecurityItem(sr);
+    	//Components c=new Components();
+    	//SecurityScheme ss=new SecurityScheme();
+    	//ss.name("Bearer Authentication");
+    	//ss.type(SecurityScheme.Type.HTTP);
+    	//ss.scheme("bearer");
+    	//ss.schemeFormat("jwt");
+    	//c.addSecuritySchemes("Bearer Authentication", ss);
+    	//api.components(
         return new OpenAPI()
             .info(new Info()
                 .title("Spring Security Demo")
