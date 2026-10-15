@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="pay()">Pay Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script th:inline="javascript">
+function pay() {
+    var rzp = new Razorpay({
+        key: "rzp_test_TXVb1f54Lhf269",
+        order_id: "order_TXtdWTA02w9erS",
+        handler: function(response){
+        	console.log(response.razorpay_payment_id);
+        	console.log(response.razorpay_order_id);
+        	console.log(response.razorpay_signature);
+        }
+    });
+    rzp.open();
+}
+</script>
+</body>
+</html>

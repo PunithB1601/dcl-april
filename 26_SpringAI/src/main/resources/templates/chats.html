@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Punith GPT</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .chat-container {
+        width: 500px;
+        max-width: 95%;
+        height: 600px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .chat-header {
+        background: #4f46e5;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .chat-body {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .user-message {
+        background: #e0e7ff;
+        padding: 12px;
+        border-radius: 12px;
+        margin: 10px 0 10px auto;
+        max-width: 80%;
+        width: fit-content;
+    }
+
+    .bot-message {
+        background: #f1f5f9;
+        padding: 12px;
+        border-radius: 12px;
+        margin: 10px 0;
+        max-width: 80%;
+        width: fit-content;
+    }
+
+    .chat-footer {
+        display: flex;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+        gap: 10px;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        min-width: 0;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .chat-footer button {
+        background: #4f46e5;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .chat-footer button:hover {
+        background: #3730a3;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <div class="chat-header">
+        Demo GPT
+    </div>
+
+    <div class="chat-body">
+
+        <div class="bot-message">
+            Hello! How can I help you today?
+        </div>
+
+        <!-- Thymeleaf Dynamic Data -->
+        <div class="user-message"
+             th:if="${question}"
+             th:text="${question}">
+        </div>
+
+        <div class="bot-message"
+             th:if="${response}"
+             th:text="${response}">
+        </div>
+
+    </div>
+
+    <form class="chat-footer" th:action="@{resp}" method="post">
+
+        <input type="text"
+               name="question"
+               placeholder="Ask anything..."
+               required>
+
+        <button type="submit">Send</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

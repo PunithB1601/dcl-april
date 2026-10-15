@@ -11,5 +11,7 @@ public class OrderDto {
 	
 	private Integer quantity;
 	
+	private PaymentDto paymentDto;
+	
 	private Double totalPrice;
 }

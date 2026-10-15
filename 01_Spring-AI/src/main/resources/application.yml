@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 01_Spring-AI
+  ai:
+    openai:
+      api-key: ${api-secrets}
+      chat:
+        options:
+          model: gpt-4o
+          max-completion-tokens: 10
