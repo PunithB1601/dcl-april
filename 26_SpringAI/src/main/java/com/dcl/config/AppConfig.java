@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
 	@Bean
-	public ChatClient getChatClient(ChatClient.Builder builder) {
-	//	return builder.defaultAdvisors(MessageChatMemoryAdvisor.builder(memory).build()).build();
+	public ChatClient getChatClient(ChatClient.Builder builder, ChatMemory memory) {
+	//	return builder.defaultAdvisors(getMemory(memory)=).build();
 		return builder.build();
 	}
 	

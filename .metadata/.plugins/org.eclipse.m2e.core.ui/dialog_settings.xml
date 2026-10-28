@@ -73,6 +73,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\26_SpringAI"/>
 			<item value="C:\Users\DELL\Documents\workspace-spring-tools-for-eclipse-5.2.0.RELEASE\16_SpringSecurity"/>
 		</list>
 		<list key="projectNameTemplate">

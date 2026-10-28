@@ -21,12 +21,31 @@ public class AIController {
 		return "chats";
 	}
 	
+	/**
 	@PostMapping("/resp")
 	public String response(@RequestParam String question, Model model) {
 		String resp=service.chat(question);
 		model.addAttribute("question",question);
 		model.addAttribute("response",resp);
 		return "chats";
+	}
+	**/
+	
+	@GetMapping("/foodrecommender")
+	public String recommendFood(Model model) {
+		return "food";
+	}
+	
+	@PostMapping("/recommend")
+	public String getRecommend(@RequestParam("food") String food,
+			                   @RequestParam("cuisine") String cuisine,
+			                   @RequestParam("place") String place, Model model) {
+		
+		String resp=service.searchForRestaurants(food, cuisine, place);
+		model.addAttribute("food",food);
+		model.addAttribute("response",resp);
+		model.addAttribute("place",place);
+		return "food";
 	}
 
 }

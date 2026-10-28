@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DineWise AI | Restaurant Finder</title>
+
+<style>
+	:root {
+    --bg: #f7f8f4;
+    --dark: #122c24;
+    --green: #26734e;
+    --muted: #77837d;
+    --border: #e5ebe5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 0 35px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.2;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    color: var(--muted);
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+.search-card {
+    background: white;
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(20, 50, 30, 0.05);
+}
+
+.search-card h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px 16px;
+    background: #fafbf9;
+    border: 1px solid #dce4dc;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #26734e18;
+}
+
+.form-group input::placeholder {
+    color: #a2ada5;
+}
+
+button {
+    width: 100%;
+    padding: 17px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #195c3c;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.results {
+    margin: 45px 0;
+}
+
+.results-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.results-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.response-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.response-header {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--border);
+}
+
+.ai-icon {
+    background: #e5f4e9;
+    color: var(--green);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 20px;
+}
+
+.response-header strong,
+.response-header small {
+    display: block;
+}
+
+.response-header small {
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.response-text {
+    padding: 26px;
+    line-height: 1.9;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+.disclaimer {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .hero {
+        padding: 45px 0 30px;
+    }
+
+    .search-card {
+        padding: 24px 20px;
+    }
+
+    .response-text {
+        padding: 20px;
+    }
+}
+	
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">DineWise <span>AI</span></div>
+    <div class="nav-label">Powered by Spring AI</div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="eyebrow">YOUR AI FOOD COMPANION</div>
+        <h1>Hungry? Let's find your
+            <span>perfect spot.</span>
+        </h1>
+        <p>
+            Tell us what you're craving and discover
+            restaurants tailored to your taste.
+        </p>
+    </section>
+
+    <section class="search-card">
+
+        <h2>Find your next meal</h2>
+        <p class="subtitle">
+            Just three details, endless possibilities.
+        </p>
+
+        <form th:action="@{/recommend}"
+              method="post"
+              id="restaurantForm">
+
+            <div class="form-group">
+                <label for="food">What are you craving?</label>
+                <input type="text"
+                       id="food"
+                       name="food"
+                       placeholder="e.g. Chicken Biryani"
+                       th:value="${food}"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="cuisine">Preferred cuisine</label>
+                <select id="cuisine" name="cuisine" required>
+                    <option value="">Select cuisine</option>
+                    <option value="Indian"
+                        th:selected="${cuisine == 'Indian'}">Indian</option>
+                    <option value="South Indian"
+                        th:selected="${cuisine == 'South Indian'}">South Indian</option>
+                    <option value="North Indian"
+                        th:selected="${cuisine == 'North Indian'}">North Indian</option>
+                    <option value="Hyderabadi"
+                        th:selected="${cuisine == 'Hyderabadi'}">Hyderabadi</option>
+                    <option value="Chinese"
+                        th:selected="${cuisine == 'Chinese'}">Chinese</option>
+                    <option value="Italian"
+                        th:selected="${cuisine == 'Italian'}">Italian</option>
+                    <option value="Continental"
+                        th:selected="${cuisine == 'Continental'}">Continental</option>
+                    <option value="Arabian"
+                        th:selected="${cuisine == 'Arabian'}">Arabian</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="place">Where do you want to eat?</label>
+                <input type="text"
+                       id="place"
+                       name="place"
+                       placeholder="e.g. Indiranagar, Bangalore"
+                       th:value="${place}"
+                       required>
+            </div>
+
+           
+            <button type="submit" id="submitBtn">
+                <span id="btnText">✦ Find My Restaurants</span>
+                <span id="btnLoading" hidden>
+                    Finding your perfect spots...
+                </span>
+            </button>
+
+        </form>
+    </section>
+
+    <section class="results"
+             th:if="${response != null}">
+
+        <div class="results-heading">
+            <div>
+                <div class="eyebrow">✦ AI RECOMMENDATIONS</div>
+                <h2>Your restaurant matches</h2>
+                <p>
+                    Based on your craving for
+                    <strong th:text="${food}"></strong>
+                    in <strong th:text="${place}"></strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="response-card">
+            <div class="response-header">
+                <span class="ai-icon">✦</span>
+                <div>
+                    <strong>DineWise AI</strong>
+                    <small>Personalized recommendations</small>
+                </div>
+            </div>
+
+            <div class="response-text"
+                 th:text="${response}">
+            </div>
+        </div>
+
+        <p class="disclaimer">
+            AI suggestions may be outdated. Verify restaurant
+            availability, prices and opening hours before visiting.
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+    DineWise AI · Built with Spring Boot, Thymeleaf & GPT-4o
+</footer>
+
+<script>
+    const form = document.getElementById("restaurantForm");
+    const button = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", function () {
+        button.disabled = true;
+        document.getElementById("btnText").hidden = true;
+        document.getElementById("btnLoading").hidden = false;
+    });
+</script>
+
+</body>
+</html>
